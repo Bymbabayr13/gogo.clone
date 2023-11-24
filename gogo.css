@@ -62,7 +62,6 @@
 }
 
 .menu {
-
     display: none;
 
 }
@@ -77,7 +76,7 @@
 
 .box-1 {
     width: 100vw;
-    height: 330px;
+    
 }
 
 .container-2 {
@@ -95,6 +94,7 @@
 }
 .container-3{
     width: 5000px;
+    height: 380px;
 }
 .container-4 {
     margin: 30px 0px;
@@ -110,6 +110,14 @@
 
     width: 8000px;
 
+}
+.width-100vw{
+    width: 100vw;
+    height: 100%;
+   
+}
+.scroll{
+    overflow: scroll;
 }
 
 .box-6 {
@@ -268,9 +276,15 @@ main {
 
 @media(min-width:1000px) {
     .menu {
-        display: block;
-        flex: 1;
+      
+       display: flex;
 
+    }
+    .box-1-1{
+        display: none;
+    }
+    .none-hiine{
+        display: none;
     }
 
     .bar {
@@ -278,18 +292,27 @@ main {
     }
 
     .weather {
-        flex: 0.3;
+        flex: 1;
+        justify-content: flex-end;
 
+    }
+    .scroll{
+        overflow: hidden;
     }
 
     .container-2 {
         display: none;
     }
+    .border-grey{
+        border: 1px solid white;
+    }
 
     .box-1 {
         width: 50vw;
     }
-
+    .width-100vw{
+        width: 50vw;
+    }
     
 
     .display-none {
@@ -317,6 +340,7 @@ main {
         column-gap: 10px;
         grid-template-columns: 2fr 1fr 1fr;
     }
+    
 
     .box-18 {
         height: auto;
