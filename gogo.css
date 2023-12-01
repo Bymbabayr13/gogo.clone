@@ -443,7 +443,33 @@
 .box-17 {
     height: 243px;
     margin-bottom: 10px;
-    
+    color: rgb(246,246,246);
+    position: relative;
+    font-family: sans-serif;
+    overflow: hidden;
+}
+.title-2{
+    position: absolute;
+    bottom: 80px;
+    left: 20px;
+    background-color: #407ce8 ;
+    display: inline;
+    padding: 8px 5px ;
+}
+.title-1{
+    position: absolute;
+    left: 20px;
+    bottom: 40px;
+    font-size: 13px;
+}
+.box-17:hover .title-photo{
+    transform: scale(1.2);
+    transition: transform  1s;
+}
+.box-17:hover .title-2{
+    background-color: #407ce8;
+    opacity: 0.5;
+    transition: opacity 1s;
 }
 
 .box-18 {
@@ -493,6 +519,7 @@
     transition: transform 1s;
     
 }
+
 
 .box-21 {
     height: 390px;
