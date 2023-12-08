@@ -1,0 +1,53 @@
+<!DOCTYPE <html>
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+
+<body>
+   <div style="display: flex; justify-content: center; align-items: center;">
+    <div>
+        <div class="is-flex mb-4">
+            <input id="orolt" class=" is-large" type="text" placeholder="zuvhun too" />
+            <button class="button is-primary is-large" onclick="bodolt();">Бодох</button>
+        </div>
+        <pre><code id="garalt" style="font-size: 20px;"></code></pre>
+    </div>
+   </div>
+
+
+
+
+    <script>
+        function bodolt() {
+            const bodoltNumber =Number(document.getElementById("orolt").value);
+            let result ,too, finalResult ,uldegdel;   
+            too = bodoltNumber;
+            uldegdel = too % 2;
+
+            if( too > 10 && uldegdel == 0){
+                finalResult = "tegsh ba 10 aas ih too"
+            }
+            if( too == 10 && uldegdel == 0){
+                finalResult = "tegsh ba 10 tei tentsuu"
+            }
+            else if( too > 10  && uldegdel == 0){
+                finalResult = "tegsh ba 10 aas ih too"
+            }
+            else if( too > 10  && uldegdel == 1){
+                finalResult = "sondgoi ba 10 aas ih too"
+            }
+            else if( too < 10  && uldegdel == 1){
+                finalResult = "sondgoi ba 10 aas baga too"
+            }
+            else if( too < 10  && uldegdel == 0){
+                finalResult = "tegsh ba 10 aas baga too"
+            }
+            document.getElementById("garalt").innerText= finalResult;
+        }      
+     
+
+    </script>
+</body>
+
+</html>

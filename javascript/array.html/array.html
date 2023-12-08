@@ -1,0 +1,44 @@
+<!DOCTYPE <html>
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+
+<body>
+   <div style="display: flex; justify-content: center; align-items: center;">
+    <div>
+        <div class="is-flex mb-4">
+            <input id="orolt" class=" is-large" type="text" placeholder="zuvhun too" />
+            <button class="button is-primary is-large" onclick="bodolt();">Бодох</button>
+        </div>
+        <pre><code id="garalt" style="font-size: 20px;"></code></pre>
+    </div>
+   </div>
+
+
+
+
+    <script>
+        function bodolt() {
+            let bodoltNumber = document.getElementById("orolt").value;
+            let result ,input, finalResult ,a , too; 
+            
+            bodoltNumber = bodoltNumber.replace("[", "")
+            bodoltNumber = bodoltNumber.replace("]",  "")
+            const value = bodoltNumber.split(", ")
+            too = 0
+            for( sum = 0; sum < value.length; sum++){
+                too = too + Number(value[sum]);
+            }
+            finalResult =  too / value.length
+            
+            console.log(finalResult)   
+
+            document.getElementById("garalt").innerText= finalResult;
+        }      
+     
+
+        
+    </script>
+</body>
+</html>
