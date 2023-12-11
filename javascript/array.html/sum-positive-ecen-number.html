@@ -9,7 +9,6 @@
     <div>
         <div class="is-flex mb-4">
             <input id="orolt" class=" is-large" type="text" placeholder="zuvhun too" />
-            <input id="orolt1" class=" is-large" type="text" placeholder="zuvhun too" />
 
             <button class="button is-primary is-large" onclick="bodolt();">Бодох</button>
         </div>
@@ -23,18 +22,20 @@
     <script>
         function bodolt() {
             let too = document.getElementById("orolt").value
-            let too1 = document.getElementById("orolt1").value
-
             too = too.split(",")
-            for (a = 0; a < too.length; a++){
-                
+            b = Number(too /2)
+            let = result
+           
+            if(Number(b= 2)){
+               for(a = 0; a >= too; a++){
+                result =result + b
+               }
             }
-            lastElement = too.slice( 0,too.length - 1)
-            secondElemet = too1
-            finalResult = lastElement+ ","+too1
-            console.log(finalResult)   
             
-            document.getElementById("garalt").innerText= finalResult,too1;
+         
+            finalResult = result
+            console.log(finalResult)   
+            document.getElementById("garalt").innerText= finalResult;
         }      
      
 

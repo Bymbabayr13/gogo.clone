@@ -1,0 +1,53 @@
+<!DOCTYPE <html>
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+
+<body>
+   <div style="display: flex; justify-content: center; align-items: center;">
+    <div>
+        <div class="is-flex mb-4">
+            <input id="orolt" class=" is-large" type="text" placeholder="zuvhun too" />
+            <input id="orolt1" class=" is-large" type="text" placeholder="zuvhun too" />
+            <input id="orolt2" class=" is-large" type="text" placeholder="zuvhun too" />
+            <button class="button is-primary is-large" onclick="bodolt();">Бодох</button>
+        </div>
+        <pre><code id="garalt" style="font-size: 20px;"></code></pre>
+    </div>
+   </div>
+
+
+
+
+    <script>
+        function bodolt() {
+            const bodoltNumber =Number(document.getElementById("orolt").value);
+            const bodoltNumber1 =String(document.getElementById("orolt1").value);
+            const bodoltNumber2=Number(document.getElementById("orolt2").value);
+            if(bodoltNumber1 == "*"){
+                result =bodoltNumber * bodoltNumber2
+            }
+            if(bodoltNumber1 == "/"){
+                result =bodoltNumber / bodoltNumber2
+            }
+            if(bodoltNumber1 == "+"){
+                result =bodoltNumber + bodoltNumber2
+            }
+            if(bodoltNumber1 == "-"){
+                result =bodoltNumber - bodoltNumber2
+            }
+   
+  
+            document.getElementById("garalt").innerText= result;
+        }      
+     
+
+    </script>
+
+
+
+</script>
+</body>
+
+</html>
