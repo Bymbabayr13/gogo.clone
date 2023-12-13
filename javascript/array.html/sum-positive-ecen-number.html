@@ -22,15 +22,17 @@
     <script>
         function bodolt() {
             let too = document.getElementById("orolt").value
-            too = too.split(",")
-            b = Number(too /2)
-            let = result
+            too = too.split(" ")
+            let result = 0
+            
+           for(let a = 0; a<=too.length; a++){
+             if(too[a] % 2 === 0){
+              result +=Number(too[a])
+              
+             }
+           }
            
-            if(Number(b= 2)){
-               for(a = 0; a >= too; a++){
-                result =result + b
-               }
-            }
+        
             
          
             finalResult = result
