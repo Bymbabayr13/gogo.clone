@@ -23,23 +23,72 @@
             let too =document.getElementById("orolt").value;
             let result = "", b,a= "",c
 
-            for(let b = 0; b <too; b++){   
-                if(b == 0 || b == too-1){
-                    for(let b = 0; b <too; b++){  
-                    result = result + "* "
-                    }
-                }
-                else{
-                   for( let i = 0; i <too; i++){
-                    if(i == 0 || i == too-1){
-                        result = result + "* "
-                    }else{
-                        result = result + "  "
-                    }
-                   }
+            // for(let b = 0; b <too; b++){   
+            //     if(b == 0 || b == too-1){
+            //         for(let b = 0; b <too; b++){  
+            //         result = result + "* "
+            //         }
+            //     }
+            //     else{
+            //        for( let i = 0; i <too; i++){
+            //         if(i == 0 || i == too-1){
+            //             result = result + "* "
+            //         }else{
+            //             result = result + "  "
+            //         }
+            //        }
                    
+            //     }
+            //     result +="\n"
+            //  }
+             for (let a = 0; a < too; a++) {
+                let c = too - a
+                let ct = too - 2
+                for (let i = 0; i < c; i++) {
+                    result += " "
+
                 }
-                result +="\n"
+                if (a == 0) {
+                    for (let d = 0; d < 1; d++) {
+                        result += "* "
+                    }
+                }
+                else {
+                    result += "* "
+                    for(let h = 0; h < a-1; h++){
+                        result += "  "
+                    }
+                    result += "* "
+                } 
+               
+
+
+                result += "\n"
+            }
+             for (let a = too; a >= 0; a--) {
+                let c = too - a
+                let ct = too - 2
+                for (let i = 0; i < c; i++) {
+                    result += " "
+
+                }
+                if (a == 0) {
+                    for (let d = 0; d < 1; d++) {
+                        result += "* "
+                    }
+                }
+    
+                else{
+                    result += "* "
+                    for(let h = 0; h < a-1; h++){
+                        result += "  "
+                    }
+                    result += "* "
+                } 
+               
+
+
+                result += "\n"
             }
       
                 document.getElementById("garalt").innerText = result;

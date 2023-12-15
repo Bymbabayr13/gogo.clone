@@ -20,16 +20,16 @@
 
     <script>
         function bodolt() {
-            let too =document.getElementById("orolt").value;
-            let result = "", b,a= "",c
+            let too = document.getElementById("orolt").value;
+            let result = "", b, a = "", c
             // for(let a = 1; a<= too; a++){    
             //     c = too -a  
             //    if(a >= 1){
             //      for(let b = 0; b< too - c; b++){
-                    
+
             //         result += "*"          
             //     }
-            
+
             // result += "\n"
             // }
             // } 
@@ -37,31 +37,79 @@
             // 4DEHI BODLOGO//
 
 
-         //    *
-         //   * *
-         //  * * *
-         // * * * *
-            for(let a = 0; a< too; a++){
-                c = too-(a+1)
-                for(let d = 0; d <too-a; d++){
-                result+=" ";
-              }
-                for(let b = 0; b< too-c; b++){
-                    
-                        result += "* "  
-                }
-              
-                
-                
-                  
+            //    *
+            //   * *
+            //  * * *
+            // * * * *
+            // for(let a = 0; a< too; a++){
+            //     c = too-(a+1)
+            //     for(let d = 0; d <too-a; d++){
+            //     result+=" ";
+            //   }
+            //     for(let b = 0; b< too-c; b++){
 
-                    
-                result +="\n"
-            }
+            //             result += "* "  
+            //     }
 
-                console.log(result)
-                document.getElementById("garalt").innerText = result;
-           
+
+
+
+
+
+            //     result +="\n"
+            // }
+
+
+            //    *
+            //   * *
+            //  *   *
+            // * * * *
+            // for (let a = 0; a < too; a++) {
+            //     let c = too - a
+            //     let ct = too - 2
+            //     for (let i = 0; i < c; i++) {
+            //         result += " "
+
+            //     }
+            //     if (a == 0) {
+            //         for (let d = 0; d < 1; d++) {
+            //             result += "* "
+            //         }
+            //     }
+            //     else if (a == too - 1) {
+            //         for (let b = 0; b < too; b++) {
+            //             result += "* "
+            //         }
+            //     }
+            //     else{
+            //         result += "* "
+            //         for(let h = 0; h < a-1; h++){
+            //             result += "  "
+            //         }
+            //         result += "* "
+            //     } 
+               
+
+
+            //     result += "\n"
+            // }
+//     *
+//    * *
+//   *   *
+//  *     *
+// *       * 
+//  *     *
+//   *   *
+//    * *
+//     *
+      
+
+
+
+
+            console.log(result)
+            document.getElementById("garalt").innerText = result;
+
         }
 
     </script>
