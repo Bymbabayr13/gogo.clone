@@ -22,21 +22,23 @@
     <script>
         function bodolt() {
             let too = document.getElementById("orolt").value
-            too = too.split(" ")
-            let result = 0
-            
-           for(let a = 0; a<=too.length; a++){
-             if(too[a] % 2 === 0){
-              result +=Number(too[a])
-              
-             }
-           }
-           
+            // let result = 0;
+            // too = too.split(" ")
+            // for(let a = 0 ; a<too.length; a++){    
+            //     if(too[a] % 2 === 0){
+            //       result =result+Number(too[a])
+            //     }
+                          
+                
+            // }
         
-            
-         
-            finalResult = result
-            console.log(finalResult)   
+      const num = [1, 2, 3, 4, 5, 6, 7, 8]
+      const chunks = [];
+      for (let i = 0; i < num.length; i+=too) {
+          chunks.slice(i, i + too)
+   
+      }
+    finalResult = chunks
             document.getElementById("garalt").innerText= finalResult;
         }      
      

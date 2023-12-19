@@ -1,0 +1,105 @@
+<html>
+  <style>
+    .playground {
+      width: 500px;
+      height: 500px;
+      background-color: aquamarine;
+      position: relative;
+    }
+    .snake {
+      position: absolute;
+      left: 300px;
+      top: 300px;
+      width: 20px;
+      height: 20px;
+      background-color: black;
+    }
+    .food {
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      position: absolute;
+      left: 20px;
+      top: 30px;
+    }
+  </style>
+  <body>
+    <div class="playground">
+      <div class="snake" id="snakeHead"></div>
+      <div class="food" id="snakeFood"></div>
+    </div>
+    <button onclick="directionMove('up')">up</button>
+    <button onclick="directionMove('down')">down</button>
+    <button onclick="directionMove('right')">right</button>
+    <button onclick="directionMove('left')">left</button>
+    <script>
+      let snakePositionLeft = 0;
+      snakePositionTop = 0;
+      direction = "right";
+      function directionMove(value) {
+        direction = value;
+      }
+      function goLeft() {
+        if (snakePositionLeft == 0) {
+          snakePositionLeft = 480;
+        } else {
+          snakePositionLeft -= 20;
+        }
+      }
+      function goRight() {
+        if (snakePositionLeft < 480) {
+          snakePositionLeft += 20;
+        } else {
+          snakePositionLeft = 0;
+        }
+      }
+      function goDown() {
+        if (snakePositionTop < 480) {
+          snakePositionTop += 20;
+        } else {
+          snakePositionTop = 0;
+        }
+      }
+      function goUp() {
+        if (snakePositionTop == 0) {
+          snakePositionTop = 480;
+        } else {
+          snakePositionTop -= 20;
+        }
+      }
+      function getRandomInt(max) {
+        return Math.floor(Math.random() * max + 1);
+      }
+      function generateFood() {
+        const food = document.getElementById("snakeFood");
+        let foodPositionTop = getRandomInt(380);
+        let foodPositionLeft = getRandomInt(380);
+
+        food.style.top = foodPositionTop;
+        food.style.left = foodPositionLeft;
+      }
+      function gameLoop() {
+        const head = document.getElementById("snakeHead");
+        head.style.left = snakePositionLeft;
+        head.style.top = snakePositionTop;
+        generateFood();
+        switch (direction) {
+          case "up":
+            goUp();
+            break;
+          case "down":
+            goDown();
+            break;
+          case "right":
+            goRight();
+            break;
+          case "left":
+            goLeft();
+            break;
+        }
+      }
+
+      setInterval(gameLoop, 200);
+    </script>
+  </body>
+</html>
