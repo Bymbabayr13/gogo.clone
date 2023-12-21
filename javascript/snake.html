@@ -1,8 +1,6 @@
 <html>
   <style>
     .playground {
-      width: 500px;
-      height: 500px;
       background-color: aquamarine;
       position: relative;
     }
@@ -10,13 +8,10 @@
       position: absolute;
       left: 300px;
       top: 300px;
-      width: 20px;
-      height: 20px;
+
       background-color: black;
     }
     .food {
-      width: 20px;
-      height: 20px;
       background-color: red;
       position: absolute;
       left: 20px;
@@ -24,47 +19,62 @@
     }
   </style>
   <body>
-    <div class="playground">
+    <div class="playground" id="playground">
       <div class="snake" id="snakeHead"></div>
       <div class="food" id="snakeFood"></div>
     </div>
+    <div>score: <span id="scoreElement"></span></div>
+
     <button onclick="directionMove('up')">up</button>
     <button onclick="directionMove('down')">down</button>
     <button onclick="directionMove('right')">right</button>
     <button onclick="directionMove('left')">left</button>
     <script>
-      let snakePositionLeft = 0;
+      let unit = 20;
+      score = 0;
+      playgroundHeight = 30;
+      playgroundWidth = 20;
+      snakePositionLeft = 0;
       snakePositionTop = 0;
       direction = "right";
       function directionMove(value) {
         direction = value;
       }
+      function playground() {
+        let playground = document.getElementById("playground");
+        playground.style.height = playgroundHeight * unit;
+        playground.style.width = playgroundWidth * unit;
+
+        const head = document.getElementById("snakeHead");
+        head.style.height = 1 * unit;
+        head.style.width = 1 * unit;
+      }
       function goLeft() {
         if (snakePositionLeft == 0) {
-          snakePositionLeft = 480;
+          snakePositionLeft = playgroundWidth - 1;
         } else {
-          snakePositionLeft -= 20;
+          snakePositionLeft -= 1;
         }
       }
       function goRight() {
-        if (snakePositionLeft < 480) {
-          snakePositionLeft += 20;
+        if (snakePositionLeft < playgroundWidth - 1) {
+          snakePositionLeft += 1;
         } else {
           snakePositionLeft = 0;
         }
       }
       function goDown() {
-        if (snakePositionTop < 480) {
-          snakePositionTop += 20;
+        if (snakePositionTop < playgroundHeight - 1) {
+          snakePositionTop += 1;
         } else {
           snakePositionTop = 0;
         }
       }
       function goUp() {
         if (snakePositionTop == 0) {
-          snakePositionTop = 480;
+          snakePositionTop = playgroundHeight - 1;
         } else {
-          snakePositionTop -= 20;
+          snakePositionTop -= 1;
         }
       }
       function getRandomInt(max) {
@@ -72,16 +82,16 @@
       }
       function generateFood() {
         const food = document.getElementById("snakeFood");
-        let foodPositionTop = getRandomInt(380);
-        let foodPositionLeft = getRandomInt(380);
+        let foodPositionTop = getRandomInt(playgroundHeight - 1);
+        let foodPositionLeft = getRandomInt(playgroundWidth - 1);
 
-        food.style.top = foodPositionTop;
-        food.style.left = foodPositionLeft;
+        food.style.top = foodPositionTop * unit;
+        food.style.left = foodPositionLeft * unit;
       }
       function gameLoop() {
         const head = document.getElementById("snakeHead");
-        head.style.left = snakePositionLeft;
-        head.style.top = snakePositionTop;
+        head.style.left = snakePositionLeft * unit;
+        head.style.top = snakePositionTop * unit;
         generateFood();
         switch (direction) {
           case "up":
@@ -97,8 +107,17 @@
             goLeft();
             break;
         }
+        if (
+          snakePositionLeft == foodPositionLeft &&
+          snakePositionTop == foodPositionTop
+        ) {
+          score++;
+          scoreElement.innerText = score;
+          generateFood();
+        }
       }
-
+      playground();
+      generateFood();
       setInterval(gameLoop, 200);
     </script>
   </body>
