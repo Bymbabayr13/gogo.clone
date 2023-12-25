@@ -20,27 +20,14 @@
 
     <script>
         function bodolt() {
-            const bodoltNumber =Number(document.getElementById("orolt").value);
+            const too =Number(document.getElementById("orolt").value);
             let result ,max, finalResult;   
-            max = bodoltNumber;
-            if(max >= 90 && max < 100 ){
-                result ="A";
-            }
-            if (max >= 80 && max < 89){
-                result ="b";
-            }
-            if(max >= 70 && max < 79){
-                result ="c"; 
-            }
-            if(max >= 60 && max < 69){
-                result ="d"; 
-            }
-            if(max > 0 && max < 59)
-            result ="f";
-
+            let arr = [1,2,3]
+            console.log(0,1 , ...arr , 4,5)
+ 
 
             finalResult =result
-            document.getElementById("garalt").innerText= finalResult;
+            document.getElementById("garalt").innerText= result;
         }      
      
 
