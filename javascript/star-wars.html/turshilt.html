@@ -1,36 +1,17 @@
-<!DOCTYPE <html>
-
-<head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-</head>
-
-<body>
-    <div style="display: flex; justify-content: center; align-items: center;">
-        <div>
-            <div class="is-flex mb-4">
-                <input id="orolt" class=" is-large" type="text" placeholder="zuvhun too" />
-                <button class="button is-primary is-large" onclick="bodolt();">Бодох</button>
-            </div>
-            <pre><code id="garalt" style="font-size: 20px;"></code></pre>
-        </div>
-    </div>
-
-
-
-
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Manipulating Elements</title>
+  </head>
+  <body>
+    <div id="container"></div>
     <script>
-        function bodolt() {
-            const text = "Sarnam";
-             const cardElement1 = `
-        <div class="card">
-            <span>${text}<span>
-        </div>`
-    }
+      const ner = document.getElementById("container");
+      const hh = document.createElement("h1");
+      hh.innerText = " child ";
+      ner.appendChild(hh);
     </script>
-
-
-
-    </script>
-</body>
-
+  </body>
 </html>

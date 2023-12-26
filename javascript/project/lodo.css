@@ -72,9 +72,50 @@ body{
   justify-content: end;
 }
 .container-2{
-    width: 300px;
-    height: 600px;
-    background-color: white;
+    width: 25%;
+    height: 480px;
+    background-color:rgb(255, 255, 255);
     border-radius: 10px;
-    display: none;
+    padding: 20px auto 20px 30px;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    position: absolute;
 }
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+  
+}
+.bg-black{
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0 ,0 ,0, 0.5);
+}
+.input-size{
+    width: 85%;
+    height: 30px;
+    border:1px solid grey;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.input-size-1{
+    width: 85%;
+    height: 80px;
+    border:1px solid grey;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.commit-b{
+    width: 85%;
+    height: 45px;
+    background-color: black;
+    border-radius: 5px;
+    
+    
+}
+
