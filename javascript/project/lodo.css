@@ -18,7 +18,7 @@ body{
     background-color: rgb(235, 236, 240);
     border-radius: 10px;
     border: 1px ;
-    height: 250px;
+    
     flex: 0.2;
 }
 .box-3{
@@ -30,12 +30,12 @@ body{
 }
 .box-1-1{
    width: 90%;
-   height: 50%;
    margin-left: auto;
    margin-right: auto;
    background-color: rgb(250, 255, 255);
    border-radius: 10px;
    padding-top: 10px;
+   display: none;
 }
 .container{
     
@@ -51,7 +51,15 @@ body{
     margin:auto;
     padding-top: 20px;
     width: 85%;
-    height: 10%;
+    
+    padding-bottom: 20px;
+    
+}
+.box-2:hover{
+    background-color:rgba(0 ,0 ,0, 0.2);
+    border-radius: 5px;
+
+    padding: 5px 10px;
 }
 .right{
     width: 20px;
