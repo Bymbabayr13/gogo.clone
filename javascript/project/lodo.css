@@ -18,8 +18,8 @@ body{
     background-color: rgb(235, 236, 240);
     border-radius: 10px;
     border: 1px ;
-    
     flex: 0.2;
+  
 }
 .box-3{
     background-color: rgb(235, 236, 240);
@@ -36,10 +36,10 @@ body{
    border-radius: 10px;
    padding-top: 10px;
    margin-bottom: 10px;
-   /* display: none; */
+ 
 }
 
-.priority{
+.Status{
     display: inline;
     margin-left: 10px;
     border: 1px rgb(162, 139, 139) solid;
@@ -99,6 +99,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;  
+    display: none;
 }
 .bg-black{
     position: fixed;
