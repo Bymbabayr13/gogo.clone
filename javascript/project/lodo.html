@@ -6,25 +6,30 @@
     <div class="w-h-100 , container">
       <div class="container-1">
         <!-- 1 -->
-        <div class="box-1"  id="TodoTask">
+        <div class="box-1" id="TodoTask">
           <div></div>
           <h2 style="margin-top: 30px; margin-left: 20px">To Do</h2>
-          
 
-          <div onclick="showModal('TodoTask')" class="box-2"><h4>+ add card</h4></div>
+          <div onclick="showModal('TodoTask')" class="box-2">
+            <h4>+ add card</h4>
+          </div>
         </div>
         <!-- 2 -->
         <div class="box-1" id="InProgressTask">
           <h2 style="margin-top: 30px; margin-left: 20px">In progress</h2>
 
-          <div onclick="showModal('InProgressTask')" class="box-2"><h4>+ add card</h4></div>
+          <div onclick="showModal('InProgressTask')" class="box-2">
+            <h4>+ add card</h4>
+          </div>
         </div>
 
         <!-- 3 -->
         <div class="box-1" id="StuckTask">
           <h2 style="margin-top: 30px; margin-left: 20px">Stuck</h2>
 
-          <div onclick="showModal('StuckTask')" class="box-2"><h4>+ add card</h4></div>
+          <div onclick="showModal('StuckTask')" class="box-2">
+            <h4>+ add card</h4>
+          </div>
         </div>
 
         <!-- 4 -->
@@ -32,7 +37,9 @@
         <div class="box-1" id="DoneTask">
           <h2 style="margin-top: 30px; margin-left: 20px">Done</h2>
 
-          <div onclick="showModal('DoneTask')" class="box-2"><h4>+ add card</h4></div>
+          <div onclick="showModal('DoneTask')" class="box-2">
+            <h4>+ add card</h4>
+          </div>
         </div>
       </div>
 
@@ -41,7 +48,7 @@
         <div class="container-2">
           <h1 style="margin-left: 10%; margin-top: 20px">Add Task</h1>
           <div style="margin-left: 10%">
-           <label for="input"> <h4>Title</h4></label>
+            <label for="input"> <h4>Title</h4></label>
             <input id="input" class="input-size" type="text" />
           </div>
           <div style="margin-left: 10%">
@@ -75,25 +82,28 @@
     </div>
 
     <script>
-      let Generate =""
-     let toolur =0
+      let Generate = "";
+      let toolur = 0;
       const commit = document.getElementById("commit");
       const input = document.getElementById("input");
       const result = document.getElementById("garalt");
       const desc = document.getElementById("description");
       const tailbar = document.getElementById("tailbar");
- 
+
       const Status = document.getElementById("Status");
       const ShowStatus = document.getElementById("ShowStatus");
-      const priority = document.getElementById("TaskPriority").value
+      const priority = document.getElementById("TaskPriority").value;
       const click = document.getElementById("modal");
       const clear = () => {
         input.value = "";
         tailbar.value = "";
-        let currentTarget =""
+        let currentTarget = "";
+      };
+      const removeTask = (taskId) => {
+        document.getElementById(taskId).remove();
+        alert("asdfasf");
       };
       function addTask() {
-        
         let display = document.getElementById("TodoTask");
 
         if (input.value == "" && tailbar.value == "") {
@@ -112,7 +122,8 @@
                 <button class="right" onclick="removeTask('task-${toolur}')">
                   <img src="./close_FILL0_wght400_GRAD0_opsz24.png" alt="" />
                 </button>
-              </div >
+              </div>
+            
             </div>
             <div class="flex" style="padding-left: 10px">
               <div id="description">${tailbar.value}</div>
@@ -133,33 +144,23 @@
             
             <div style="padding-left: 10px"></div>
           </div>`;
-          
+
           let display = document.getElementById(currentTarget);
           display.innerHTML = display.innerHTML + Generate;
           clear();
           none();
-          toolur++
-         
+          toolur++;
         }
-        function removeTask(){
-              // document.getElementById(taskId).remove();
-              alert('ewsafd')
-        }
-      console.log()
+
+        console.log();
       }
       function showModal(TargetId) {
-       click.style.display = "flex"
-       currentTarget = TargetId;
-       currentTarget = priority.value
-       
-
-      
-      
+        click.style.display = "flex";
+        currentTarget = TargetId;
       }
       function none() {
         click.style.display = "none";
       }
-      
     </script>
   </body>
 </html>

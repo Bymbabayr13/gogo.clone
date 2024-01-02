@@ -1,0 +1,21 @@
+<html>
+  <body>
+    <div id="task"></div>
+
+    <script>
+      const task = document.getElementById("task");
+      const arr = [{ name: " tgusuu", username: "akira" }];
+      render();
+      const render = () => {
+        for (let i = 0; i < arr.length; i++) {
+          let task = task[i];
+          let taskHTml = `<div>${task.name}</div>`;
+        }
+        let result;
+        result += taskHTml;
+        task.innerHTML = result;
+      };
+      render();
+    </script>
+  </body>
+</html>
