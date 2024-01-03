@@ -1,21 +1,41 @@
 <html>
   <body>
+    <input type="text" id="input">
+    <button onclick="addTask()">sda</button>
     <div id="task"></div>
 
     <script>
-      const task = document.getElementById("task");
-      const arr = [{ name: " tgusuu", username: "akira" }];
-      render();
+     
+      const arr = [
+        
+     "tgusuu", 
+     "akira",
+     "sdafsdf"
+    ];
+     
       const render = () => {
+        let taskHTml ,result
+        const task = document.getElementById("task");
         for (let i = 0; i < arr.length; i++) {
-          let task = task[i];
-          let taskHTml = `<div>${task.name}</div>`;
+          let taskHTml = `<div>${arr[i]}</div>`;
+         
+          result = result + taskHTml
         }
-        let result;
-        result += taskHTml;
         task.innerHTML = result;
       };
-      render();
+      
+    
+      const addTask = () => {
+        let input = document.getElementById("input").value;
+        arr.push([input])
+        render();
+        document.getElementById("input").value = ""
+        
+      }
+      render()
+      
+      
+     
     </script>
   </body>
 </html>
