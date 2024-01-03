@@ -1,41 +1,25 @@
 <html>
   <body>
-    <input type="text" id="input">
-    <button onclick="addTask()">sda</button>
+    <input type="text" id="input" />
+    <button onclick="addTask()">sdf</button>
     <div id="task"></div>
 
     <script>
-     
-      const arr = [
-        
-     "tgusuu", 
-     "akira",
-     "sdafsdf"
-    ];
-     
-      const render = () => {
-        let taskHTml ,result
-        const task = document.getElementById("task");
-        for (let i = 0; i < arr.length; i++) {
-          let taskHTml = `<div>${arr[i]}</div>`;
-         
-          result = result + taskHTml
-        }
-        task.innerHTML = result;
-      };
-      
-    
-      const addTask = () => {
-        let input = document.getElementById("input").value;
-        arr.push([input])
-        render();
-        document.getElementById("input").value = ""
-        
+      const product = [
+        { name: "medium", price: 1500 },
+        { name: "high", price: 4000 },
+        { name: "high", price: 100 },
+        { name: "low", price: 1000 },
+        { name: "low", price: 1000 },
+        { name: "high", price: 1000 },
+      ];
+      product.sort(hariu);
+
+      function hariu(a, b) {
+        const value = { high: 1, medium: 2, low: 3 };
+        return value[a.name] - value[b.name];
       }
-      render()
-      
-      
-     
+      console.log(product);
     </script>
   </body>
 </html>
