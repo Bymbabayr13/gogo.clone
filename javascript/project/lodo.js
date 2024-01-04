@@ -1,5 +1,4 @@
-
-let arr = []
+let arr = [];
 let Generate = "";
 let toolur = 0;
 const commit = document.getElementById("commit");
@@ -10,47 +9,50 @@ const tailbar = document.getElementById("tailbar");
 
 const Status = document.getElementById("Status");
 const ShowStatus = document.getElementById("ShowStatus");
-const priority = document.getElementById("TaskPriority").value;
+const priority = document.getElementById("TaskPriority");
 const click = document.getElementById("modal");
 
-const todoTasksElement = document.getElementById("TodoTasks");
-const inprogressTasksElement = document.getElementById("InprogressTasks");
-const stuckTasksElement = document.getElementById("StuckTasks");
-const doneTasksElement = document.getElementById("DoneTasks");
 let currentTarget = "";
 const clear = () => {
   input.value = "";
   tailbar.value = "";
-
 };
 const removeTask = (taskId) => {
-  document.getElementById(taskId).remove();
-  alert("asdfasf");
+  arr.splice(taskId, 1);
+  alert("asdaf");
+  render();
+  console.log(taskId);
 };
 
+function render() {
+  const todoTasksElement = document.getElementById("TodoTask");
+  const inprogressTasksElement = document.getElementById("InprogressTask");
+  const stuckTasksElement = document.getElementById("StuckTask");
+  const doneTasksElement = document.getElementById("DoneTask");
 
-function render (){
-  const display = document.getElementById(currentTarget)
-for(let i=0; i<arr.length; i++){
-  let result= ""
-  let arrs = arr[i]
-  const Generate = `
-  <div  class="box-1-1" id="task-${arrs.id}">
+  let todoResult = "";
+  let inprogressResult = "";
+  let stuckResult = "";
+  let doneResult = "";
+
+  let result = "";
+  for (let i = 0; i < arr.length; i++) {
+    const Generate = `
+  <div  class="box-1-1" id="task-${arr[i].id}">
         <div class="flex" style="padding-left: 10px">
           <button class="right">
             <img src="./done_FILL0_wght400_GRAD0_opsz24.png" alt="" />
           </button>
-          <div id="garalt" style="margin-bottom:5px">${arrs.title}</div>
+          <div id="garalt" style="margin-bottom:5px">${arr[i].title}</div>
           <div   class="end" style="margin-left: auto">
-            <button class="right" onclick="removeTask('task-${arr.id}')">
+            <button class="right" onclick="removeTask('task-${i}')">
               <img src="./close_FILL0_wght400_GRAD0_opsz24.png" alt="" />
             </button>
           </div>
         
         </div>
         <div class="flex" style="padding-left: 10px">
-          <div id="description">${arrs.tailbar}</div>
-          
+          <div id="description">${arr[i].tailbar}</div>
           <div class="end" style="margin-left: auto">
             <button class="right">
               <img
@@ -63,44 +65,50 @@ for(let i=0; i<arr.length; i++){
           </div>
         </div>
         
-          <div  class="Status";> ${arrs.priority}</div>
-        
+          <div  class="Status";> ${arr[i].priority.value}</div>
         <div style="padding-left: 10px"></div>
       </div>`;
-    result +=Generate
-  
-  
+    result = Generate;
+
+    switch (arr.status) {
+      case "To do":
+        todoResult += result;
+        break;
+      case "In progress":
+        inprogressResult += result;
+        break;
+      case "Stuck":
+        stuckResult += result;
+        break;
+      case "Done":
+        doneResult += result;
+        break;
+    }
+  }
+
+  todoTasksElement.innerHTML += todoResult;
+  inprogressTasksElement.innerHTML += inprogressResult;
+  stuckTasksElement.innerHTML += stuckResult;
+  doneTasksElement.innerHTML += doneResult;
 }
 
-display.innerHTML += result
-}
 function addTask() {
-    arr.push = [{
-      id:toolur++,
-      title:input,
-      tailbar:tailbar,
-      priority:ShowStatus
-    }]
-    console.log(result)
+  arr.push({
+    id: toolur++,
+    title: input.value,
+    tailbar: tailbar.value,
+    priority: ShowStatus.value,
+    status: priority.value,
+  });
+  console.log(arr);
 
-    // click.style.display = "flex";
-    render(); 
-    clear();
-    none();
-   
-  
-
-  console.log();
+  render();
+  clear();
+  none();
 }
-function showModal(TargetId) {
+function showModal() {
   click.style.display = "flex";
-  currentTarget = TargetId;
 }
 function none() {
   click.style.display = "none";
 }
-console.log(Generate)
-render();
-
-
-
