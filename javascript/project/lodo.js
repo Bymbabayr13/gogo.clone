@@ -1,6 +1,7 @@
 let arr = [];
 let Generate = "";
 let toolur = 0;
+let task;
 const commit = document.getElementById("commit");
 const input = document.getElementById("input");
 const result = document.getElementById("garalt");
@@ -18,17 +19,29 @@ const clear = () => {
   tailbar.value = "";
 };
 const removeTask = (taskId) => {
-  arr.splice(taskId, 1);
-  alert("asdaf");
+  let ner;
+  ner = confirm("are you sure to delete that button");
+  if (ner == true) {
+    arr.splice(taskId, 1);
+  }
   render();
   console.log(taskId);
 };
 
 function render() {
   const todoTasksElement = document.getElementById("TodoTask");
-  const inprogressTasksElement = document.getElementById("InprogressTask");
+  const inprogressTasksElement = document.getElementById("InProgressTask");
   const stuckTasksElement = document.getElementById("StuckTask");
   const doneTasksElement = document.getElementById("DoneTask");
+
+  const sorted = arr.sort((a, b) => {
+    let ner = {
+      Low: 3,
+      Medium: 2,
+      High: 1,
+    };
+    return ner[a.priority] - ner[b.priority];
+  });
 
   let todoResult = "";
   let inprogressResult = "";
@@ -45,7 +58,7 @@ function render() {
           </button>
           <div id="garalt" style="margin-bottom:5px">${arr[i].title}</div>
           <div   class="end" style="margin-left: auto">
-            <button class="right" onclick="removeTask('task-${i}')">
+              <button class="right" onclick="removeTask(${i})">
               <img src="./close_FILL0_wght400_GRAD0_opsz24.png" alt="" />
             </button>
           </div>
@@ -54,7 +67,7 @@ function render() {
         <div class="flex" style="padding-left: 10px">
           <div id="description">${arr[i].tailbar}</div>
           <div class="end" style="margin-left: auto">
-            <button class="right">
+            <button class="right" onclick="upgrade(${i});">
               <img
                 style="width: 17px"
                 src="./edit_note_FILL0_wght400_GRAD0_opsz24.png"
@@ -65,31 +78,52 @@ function render() {
           </div>
         </div>
         
-          <div  class="Status";> ${arr[i].priority.value}</div>
+          <div  class="Status";> ${arr[i].priority}</div>
         <div style="padding-left: 10px"></div>
       </div>`;
-    result = Generate;
 
-    switch (arr.status) {
-      case "To do":
-        todoResult += result;
+    switch (arr[i].status) {
+      case "TodoTask":
+        todoResult += Generate;
         break;
-      case "In progress":
-        inprogressResult += result;
+      case "InProgressTask":
+        inprogressResult += Generate;
         break;
-      case "Stuck":
-        stuckResult += result;
+      case "StuckTask":
+        stuckResult += Generate;
         break;
-      case "Done":
-        doneResult += result;
+      case "DoneTask":
+        doneResult += Generate;
         break;
     }
+
+    // if (arr[i].status == "StuckTask") {
+    //   stuckResult += Generate;
+    //   // stuckTasksElement.innerHTML = stuckResult;
+    // }
+
+    // if (arr[i].status == "TodoTask") {
+    //   todoResult += Generate;
+    //   // todoTasksElement.innerHTML = todoResult;
+    // }
+    // if (arr[i].status == "InProgressTask") {
+    //   inprogressResult += Generate;
+    //   // inprogressTasksElement.innerHTML = inprogressResult;
+    // }
+    // if (arr[i].status == "DoneTask") {
+    //   doneResult += Generate;
+    //   // doneTasksElement.innerHTML = doneResult;
+    // }
   }
 
-  todoTasksElement.innerHTML += todoResult;
-  inprogressTasksElement.innerHTML += inprogressResult;
-  stuckTasksElement.innerHTML += stuckResult;
-  doneTasksElement.innerHTML += doneResult;
+  if (input.value == "" && tailbar.value == "") {
+    alert("utga oorul");
+  } else {
+    todoTasksElement.innerHTML = todoResult;
+    inprogressTasksElement.innerHTML = inprogressResult;
+    stuckTasksElement.innerHTML = stuckResult;
+    doneTasksElement.innerHTML = doneResult;
+  }
 }
 
 function addTask() {
@@ -100,15 +134,28 @@ function addTask() {
     priority: ShowStatus.value,
     status: priority.value,
   });
-  console.log(arr);
 
   render();
   clear();
   none();
 }
+
 function showModal() {
   click.style.display = "flex";
 }
 function none() {
   click.style.display = "none";
+}
+function update() {
+  arr[task].title = input.value;
+  arr[task].tailbar = tailbar.value;
+  none();
+
+  console.log(input.value, tailbar.value);
+}
+function upgrade(taskId) {
+  showModal();
+  input.value = arr[taskId].title;
+  tailbar.value = arr[taskId].tailbar;
+  task = taskId;
 }
