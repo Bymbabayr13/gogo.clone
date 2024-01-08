@@ -79,53 +79,46 @@ function render() {
         </div>
         
           <div  class="Status";> ${arr[i].priority}</div>
-        <div style="padding-left: 10px"></div>
+        <div style="padding-left: 10px; margin-top:5px;">
+        <select style="border-radius:5px" onchange="changeStatus(${i},this.value)">
+        <option ${arr[i].status === "To do" ? "selected" : ""}>To do</option>
+        <option ${
+          arr[i].status === "In Progress" ? "selected" : ""
+        }>In Progress</option>
+        <option ${arr[i].status === "Stuck" ? "selected" : ""}>Stuck</option>
+        <option ${arr[i].status === "Done" ? "selected" : ""}>Done</option>
+     </select>
+        </div>
+        
+      
       </div>`;
 
     switch (arr[i].status) {
-      case "TodoTask":
+      case "To do":
         todoResult += Generate;
         break;
-      case "InProgressTask":
+      case "In Progress":
         inprogressResult += Generate;
         break;
-      case "StuckTask":
+      case "Stuck":
         stuckResult += Generate;
         break;
-      case "DoneTask":
+      case "Done":
         doneResult += Generate;
         break;
     }
-
-    // if (arr[i].status == "StuckTask") {
-    //   stuckResult += Generate;
-    //   // stuckTasksElement.innerHTML = stuckResult;
-    // }
-
-    // if (arr[i].status == "TodoTask") {
-    //   todoResult += Generate;
-    //   // todoTasksElement.innerHTML = todoResult;
-    // }
-    // if (arr[i].status == "InProgressTask") {
-    //   inprogressResult += Generate;
-    //   // inprogressTasksElement.innerHTML = inprogressResult;
-    // }
-    // if (arr[i].status == "DoneTask") {
-    //   doneResult += Generate;
-    //   // doneTasksElement.innerHTML = doneResult;
-    // }
   }
 
-  if (input.value == "" && tailbar.value == "") {
-    alert("utga oorul");
-  } else {
-    todoTasksElement.innerHTML = todoResult;
-    inprogressTasksElement.innerHTML = inprogressResult;
-    stuckTasksElement.innerHTML = stuckResult;
-    doneTasksElement.innerHTML = doneResult;
-  }
+  todoTasksElement.innerHTML = todoResult;
+  inprogressTasksElement.innerHTML = inprogressResult;
+  stuckTasksElement.innerHTML = stuckResult;
+  doneTasksElement.innerHTML = doneResult;
 }
-
+function changeStatus(index, value) {
+  arr[index].status = value;
+  render();
+  console.log();
+}
 function addTask() {
   arr.push({
     id: toolur++,
@@ -147,11 +140,12 @@ function none() {
   click.style.display = "none";
 }
 function update() {
-  arr[task].title = input.value;
   arr[task].tailbar = tailbar.value;
+  arr[task].title = input.value;
+  arr[task].priority = ShowStatus.value;
+  arr[task].status = priority.value;
+  render();
   none();
-
-  console.log(input.value, tailbar.value);
 }
 function upgrade(taskId) {
   showModal();
