@@ -79,8 +79,8 @@ function render() {
         </div>
         
           <div  class="Status";> ${arr[i].priority}</div>
-        <div style="padding-left: 10px; margin-top:5px;">
-        <select style="border-radius:5px" onchange="changeStatus(${i},this.value)">
+        <div   style="padding-left: 10px; margin-top:5px;">
+        <select style="border-radius:5px"   ,this.value)">
         <option ${arr[i].status === "To do" ? "selected" : ""}>To do</option>
         <option ${
           arr[i].status === "In Progress" ? "selected" : ""
@@ -89,7 +89,8 @@ function render() {
         <option ${arr[i].status === "Done" ? "selected" : ""}>Done</option>
      </select>
         </div>
-        
+        <button onclick="changePosition(${i} )">up<button>
+        <button onclick="changePosition(${i} )">down<button>
       
       </div>`;
 
@@ -126,13 +127,14 @@ function addTask() {
     tailbar: tailbar.value,
     priority: ShowStatus.value,
     status: priority.value,
+    position: toolur++,
   });
 
   render();
   clear();
   none();
 }
-
+function changePosition(current, next) {}
 function showModal() {
   click.style.display = "flex";
 }

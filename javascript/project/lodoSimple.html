@@ -1,0 +1,64 @@
+<html lang="en">
+  <head>
+    <style>
+      .list {
+        width: 500px;
+        margin: 0px auto;
+        background-color: aquamarine;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <body>
+      <div class="list">
+        <h2>todotask</h2>
+        <div id="addTask"></div>
+        <button onclick="modal()">addtask</button>
+      </div>
+    </body>
+    <script>
+      let arr = [];
+      let toolur = 0;
+      let utga;
+      function render() {
+        let taskHTML = "";
+        for (let i = 0; i < arr.length; i++) {
+          let too = toolur++;
+          generate = `<div style="border:4px red solid;  ">
+            <h2> ${arr[i]}<h2>
+            <button onclick="deleteBtn(${i})">delete</button>
+            <button onclick="update(${i})">update</button>
+            </div>`;
+          taskHTML += generate;
+        }
+
+        document.getElementById("addTask").innerHTML = taskHTML;
+      }
+      function modal() {
+        utga = prompt("utga");
+        if (utga != null) {
+          arr.push(utga);
+          render();
+        }
+      }
+      function deleteBtn(taskId) {
+        const conf = confirm("ustgahuu");
+        if (conf == true) {
+          arr.splice(taskId, 1);
+          render();
+        }
+      }
+      function update(index) {
+        let editText = prompt("name", arr[index]);
+        if (editText != null) {
+          arr[index] = editText;
+
+          render();
+        }
+      }
+    </script>
+  </body>
+</html>
