@@ -89,8 +89,6 @@ function render() {
         <option ${arr[i].status === "Done" ? "selected" : ""}>Done</option>
      </select>
         </div>
-        <button onclick="changePosition(${i} )">up<button>
-        <button onclick="changePosition(${i} )">down<button>
       
       </div>`;
 

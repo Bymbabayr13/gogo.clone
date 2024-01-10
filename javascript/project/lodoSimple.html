@@ -31,6 +31,8 @@
             <h2> ${arr[i]}<h2>
             <button onclick="deleteBtn(${i})">delete</button>
             <button onclick="update(${i})">update</button>
+            <button onclick="position(current,next)">up</button>
+            <button onclick="position(current,next)">Down</button>
             </div>`;
           taskHTML += generate;
         }
@@ -55,10 +57,10 @@
         let editText = prompt("name", arr[index]);
         if (editText != null) {
           arr[index] = editText;
-
           render();
         }
       }
+      function position(current, next) {}
     </script>
   </body>
 </html>
