@@ -6,6 +6,19 @@
         margin: 0px auto;
         background-color: aquamarine;
       }
+      .task-complated > h2 {
+        text-decoration: line-through;
+      }
+      .tasks {
+        display: flex;
+        flex-direction: column;
+      }
+      .task-completed {
+        order: 1;
+      }
+      .task- {
+        order: 2;
+      }
     </style>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,37 +28,50 @@
     <body>
       <div class="list">
         <h2>todotask</h2>
-        <div id="addTask"></div>
+        <div class="tasks" id="addTask"></div>
         <button onclick="modal()">addtask</button>
       </div>
     </body>
     <script>
       let arr = [];
-      let toolur = 0;
-      let utga;
-      function render() {
-        let taskHTML = "";
-        for (let i = 0; i < arr.length; i++) {
-          let too = toolur++;
-          generate = `<div style="border:4px red solid;  ">
-            <h2> ${arr[i]}<h2>
-            <button onclick="deleteBtn(${i})">delete</button>
-            <button onclick="update(${i})">update</button>
-            <button onclick="position(current,next)">up</button>
-            <button onclick="position(current,next)">Down</button>
-            </div>`;
-          taskHTML += generate;
-        }
 
-        document.getElementById("addTask").innerHTML = taskHTML;
+      function render() {
+        function myFunc(task, index) {
+          return `<div style="border:4px red solid; " class="task-${
+            task.status
+          }">
+            <input type="checkbox" ${
+              task.status == "complated" ? "checked" : ""
+            }  onclick="changeStatus(${index},'${
+            task.status == "complated" ? "" : "complated"
+          }')"/>
+            <h2> ${task.name}<h2>
+            <button onclick="deleteBtn(${index})">delete</button>
+            <button onclick="update(${index})">update</button>
+            </div>`;
+        }
+        const result = arr.map(myFunc);
+        document.getElementById("addTask").innerHTML = result;
       }
+      function changeStatus(index, value) {
+        arr[index].status = value;
+        render();
+      }
+
       function modal() {
+        let utga;
         utga = prompt("utga");
+        taskElement = {
+          name: utga,
+          status: "",
+        };
+
         if (utga != null) {
-          arr.push(utga);
+          arr.push(taskElement);
           render();
         }
       }
+
       function deleteBtn(taskId) {
         const conf = confirm("ustgahuu");
         if (conf == true) {
@@ -54,13 +80,33 @@
         }
       }
       function update(index) {
-        let editText = prompt("name", arr[index]);
+        let editText = prompt("name", arr[index].name);
         if (editText != null) {
-          arr[index] = editText;
+          arr[index].name = editText;
+
           render();
         }
       }
-      function position(current, next) {}
+
+      // const myArr = ["one", "two", "three"];
+
+      // function myCallbackFunc(item, index) {
+      //   return `element ${index} ${item}`;
+      // }
+
+      // function myMap(arr, callback) {
+      //   const resultArr = [];
+
+      //   for (let i = 0; i < arr.length; i++) {
+      //     const item = arr[i];
+      //     resultArr.push(callback(item, i));
+      //   }
+
+      //   return resultArr;
+      // }
+
+      // const result = myMap(myArr, myCallbackFunc);
+      // console.log(result);
     </script>
   </body>
 </html>

@@ -101,6 +101,7 @@
       let computer = document.querySelector("#computerChoise");
       let button = document.querySelectorAll(".move");
       let score = document.querySelector("#score");
+      const btn = document.querySelectorAll(".move");
 
       function render() {
         let html = ` <h3>
@@ -143,12 +144,12 @@
           computerScore++;
         }
         if (finalScore == computerScore || finalScore == playerScore) {
-          console.log(document.querySelectorAll(".move")[0]);
-          document.querySelectorAll(".move")[0].disabled = true;
-          document.querySelectorAll(".move")[1].disabled = true;
-          document.querySelectorAll(".move")[2].disabled = true;
+          btn.forEach(btnDisable);
         }
         render();
+      }
+      function btnDisable(value) {
+        value.disabled = true;
       }
     </script>
   </body>
