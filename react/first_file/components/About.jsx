@@ -1,10 +1,9 @@
+import { Chip } from "./Chip";
 export function About() {
   return (
     <div className="container mx-auto">
       <div className="flex justify-center mt-40">
-        <div className="bg-black rounded-md inline-block px-2 mx-auto">
-          <p className="text-white">About Me</p>
-        </div>
+        <Chip label={"About me"} />
       </div>
       <div className="md:flex justify-center justify-between mt-16 gap-8">
         <img
