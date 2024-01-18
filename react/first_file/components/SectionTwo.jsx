@@ -3,19 +3,29 @@ import { ContainerTwo } from "./ContainerTwo";
 export function SectionTwo() {
   return (
     <div>
-      <div className="flex justify-center">
+      <div className="flex justify-center my-10">
         <Chip label={"Work"} />
       </div>
-      <p className="text-center mt-4 mb-10">
+      <p className="text-center mt-4 mb-10 ">
         Here is a quick summary of my most recent experiences:
       </p>
-      <div className="flex flex-col gap-2 md:flex-row ">
+      <div className="flex flex-col justify-items-stretch items-stretch gap-2 md:flex-row my-10">
         <div className=" md:w-1/2 p-8  bg-slate-100 rounded-md flex justify-center items-center">
           <img className="" src="Picture.png" alt="" />
         </div>
-        <div className=" md:w-1/2">
-          <ContainerTwo />
+        <ContainerTwo />
+      </div>
+      <div className=" flex my-10 flex-col justify-items-stretch items-stretch gap-2  md:flex-row ">
+        <ContainerTwo />
+        <div className=" md:w-1/2 p-8  bg-slate-100 rounded-md flex justify-center items-center">
+          <img className="" src="Picture.png" alt="" />
         </div>
+      </div>
+      <div className="flex my-10 flex-col justify-items-stretch items-stretch gap-2 md:flex-row ">
+        <div className=" md:w-1/2 p-8  bg-slate-100 rounded-md flex justify-center items-center">
+          <img className="" src="Picture.png" alt="" />
+        </div>
+        <ContainerTwo />
       </div>
     </div>
   );
