@@ -7,7 +7,6 @@ export function MenuList({ items }) {
             {item.label}
           </a>
         );
-        console.log(item.label);
       })}
     </div>
   );
