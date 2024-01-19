@@ -1,5 +1,5 @@
 import { Logo } from "./icons/Logo";
-import { Menuitems } from "../../Data/Menuitems";
+import { Menuitems } from "../Data/Menuitems";
 import { Menu } from "./icons/Menu";
 import { Sun } from "./icons/sun";
 import { MenuList } from "./MenuList";

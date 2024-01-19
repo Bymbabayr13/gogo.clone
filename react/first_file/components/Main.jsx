@@ -1,5 +1,5 @@
 import TailwindConfig from "@/tailwind.config";
-import { Mandata } from "../../Data/Mandata";
+import { Mandata } from "../Data/Mandata";
 import { ManList } from "./ManList";
 
 export function Main() {

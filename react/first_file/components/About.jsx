@@ -1,6 +1,6 @@
 import { Chip } from "./Chip";
 import { AboutList } from "./AboutList";
-import { Aboutdata } from "../../Data/Aboutdata";
+import { Aboutdata } from "../Data/Aboutdata";
 
 export function About() {
   return (
