@@ -1,4 +1,3 @@
-import { Upwork } from "../components/icons/Upwork";
 export const Experience = {
   about: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
     dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit
@@ -6,5 +5,5 @@ export const Experience = {
     consectetur adipiscing elit.`,
   day: ` Nov 2021 - Present`,
   who: `Sr. Frontend Developer`,
-  img: "upwork.png",
+  img: "image.png",
 };
