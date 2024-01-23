@@ -1,8 +1,9 @@
 import { Chip } from "./Chip";
 import { ContainerTwo } from "./ContainerTwo";
+import { Work } from "@/Data/Work";
 export function SectionTwo() {
   return (
-    <div>
+    <div className="dark:text-slate-200">
       <div className="flex justify-center my-10">
         <Chip label={"Work"} />
       </div>
@@ -10,22 +11,13 @@ export function SectionTwo() {
         Here is a quick summary of my most recent experiences:
       </p>
       <div className="flex flex-col justify-items-stretch items-stretch gap-2 md:flex-row my-10">
-        <div className=" md:w-1/2 p-8  bg-slate-100 rounded-md flex justify-center items-center">
-          <img className="" src="Picture.png" alt="" />
-        </div>
-        <ContainerTwo />
+        <ContainerTwo value={Work} />
       </div>
       <div className=" flex my-10 flex-col justify-items-stretch items-stretch gap-2  md:flex-row ">
-        <ContainerTwo />
-        <div className=" md:w-1/2 p-8  bg-slate-100 rounded-md flex justify-center items-center">
-          <img className="" src="Picture.png" alt="" />
-        </div>
+        <ContainerTwo value={Work} />
       </div>
       <div className="flex my-10 flex-col justify-items-stretch items-stretch gap-2 md:flex-row ">
-        <div className=" md:w-1/2 p-8  bg-slate-100 rounded-md flex justify-center items-center">
-          <img className="" src="Picture.png" alt="" />
-        </div>
-        <ContainerTwo />
+        <ContainerTwo value={Work} />
       </div>
     </div>
   );

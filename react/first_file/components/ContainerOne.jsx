@@ -1,22 +1,15 @@
-export function ContainerOne() {
+export function ContainerOne({ value }) {
   return (
-    <div className="p-8  bg-slate-50 mb-12 rounded-md">
-      <div className="md:flex flex-row justify-between ">
+    <div className="p-8 dark:bg-slate-800 dark:text-slate-300 bg-slate-50 mb-12 rounded-md">
+      <div className="md:flex flex-row justify-between  dark:text-white ">
         <div className="">
-          <img src="upwork.png"></img>
+          <img src={value.img}></img>
         </div>
-        <div className="my-4 md:my-0 md:order-2  dark:text-black">
-          Nov 2021 - Present
-        </div>
-        <div className="w-3/5  dark:text-black">
-          <h1>Sr. Frontend Developer</h1>
+        <div className="my-4 md:my-0 md:order-2 ">{value.day}</div>
+        <div className="w-3/5  dark:text-slate-300">
+          <h1>{value.who}</h1>
 
-          <p className="order-1 dark:text-black">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit
-            amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit.
-          </p>
+          <p className="order-1">{value.about}</p>
         </div>
       </div>
     </div>

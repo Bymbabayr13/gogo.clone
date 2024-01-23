@@ -3,6 +3,9 @@ import { Menuitems } from "../Data/Menuitems";
 import { Menu } from "./icons/Menu";
 import { Sun } from "./icons/sun";
 import { MenuList } from "./MenuList";
+
+import { PhoneMenu } from "./PhoneMenu";
+
 export function Header() {
   return (
     <div className="flex , justify-between p-4">
@@ -18,9 +21,7 @@ export function Header() {
           Download CV
         </a>
       </div>
-      <div className="md:hidden">
-        <Menu />
-      </div>
+      <PhoneMenu value={Menuitems} />
     </div>
   );
 }
