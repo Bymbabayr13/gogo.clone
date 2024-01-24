@@ -17,7 +17,7 @@ import { Git } from "./icons/Git";
 
 export function Aside() {
   return (
-    <div className=" mt-24  container mx-au">
+    <div className=" mt-24  container mx-auto">
       <div className="flex justify-center">
         <Chip label={"Skill"} />
       </div>

@@ -1,6 +1,7 @@
 export function Cat() {
   return (
     <svg
+      className="dark:text-slate-200"
       width="36"
       height="36"
       viewBox="0 0 36 36"

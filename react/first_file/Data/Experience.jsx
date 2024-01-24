@@ -5,5 +5,4 @@ export const Experience = {
     consectetur adipiscing elit.`,
   day: ` Nov 2021 - Present`,
   who: `Sr. Frontend Developer`,
-  img: "image.png",
 };

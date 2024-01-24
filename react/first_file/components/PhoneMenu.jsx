@@ -2,6 +2,7 @@ import { Logo } from "./icons/Logo";
 import { Close } from "./icons/Close";
 import { useState } from "react";
 import { Menu } from "./icons/Menu";
+import { ThemeMode } from "./ThemeMode";
 export function PhoneMenu({ value }) {
   const [visible, setVisible] = useState(false);
   function OpenMenu() {
@@ -36,8 +37,11 @@ export function PhoneMenu({ value }) {
             <h1>{value[3].label}</h1>
           </div>
           <div className="bg-slate-500 h-[1px] my-8"></div>
-          <div>
+          <div className="flex justify-between">
             <h1 className="my-7 text-2xl">Switch Them</h1>
+            <div className="flex items-center">
+              <ThemeMode />
+            </div>
           </div>
           <a
             className="bg-white flex justify-center rounded-md text-black p-1 hover:bg-slate-300 text-xl mt-4"
