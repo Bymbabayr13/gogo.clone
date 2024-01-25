@@ -1,10 +1,11 @@
 export function Express() {
   return (
     <svg
+      className="bg-green-800 text-green-800"
       width="65"
       height="64"
       viewBox="0 0 65 64"
-      fill="none"
+      fill="green"
       xmlns="http://www.w3.org/2000/svg"
     >
       <g clip-path="url(#clip0_327_1899)">

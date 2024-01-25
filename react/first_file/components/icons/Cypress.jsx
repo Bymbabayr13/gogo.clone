@@ -1,6 +1,7 @@
 export function Cypress() {
   return (
     <svg
+      className="bg-cyan-800"
       width="64"
       height="64"
       viewBox="0 0 64 64"

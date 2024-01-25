@@ -8,6 +8,7 @@ export function Header() {
   return (
     <div className="flex , justify-between p-4">
       <Logo />
+
       <div className="hidden gap-2 md:flex">
         <MenuList items={Menuitems} />
         <ThemeMode />

@@ -1,5 +1,5 @@
 export const Mandata = {
-  name: " Hi, I’m Sagar 👋",
+  name: " Hi, I’m bymbabayr 👋",
 
   story: ` I'm a full stack developer (React.js & Node.js) with a focus on
     creating (and occasionally designing) exceptional digital experiences

@@ -44,7 +44,7 @@ export function PhoneMenu({ value }) {
             </div>
           </div>
           <a
-            className="bg-white flex justify-center rounded-md text-black p-1 hover:bg-slate-300 text-xl mt-4"
+            className="bg-black text-white dark:bg-white dark:text-black flex justify-center rounded-md text-black p-1 hover:bg-slate-300 text-xl mt-4"
             href="martin.webp"
             download={true}
           >

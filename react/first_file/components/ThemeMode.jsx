@@ -17,7 +17,7 @@ export function ThemeMode() {
   }
   useEffect(() => {
     const theme = localStorage.getItem("theme");
-    setTheme(theme);
+    setTheme(theme || "dark");
     document.documentElement.classList.add(theme);
   });
 

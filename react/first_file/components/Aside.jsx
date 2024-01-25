@@ -24,7 +24,7 @@ export function Aside() {
       <div className="flex justify-center mt-8">
         <p>The skills, tools and technologies I am really good at:</p>
       </div>
-      <div className="flex  mx-auto justify-center md:justify-normal flex-wrap gap-10 mt-10">
+      <div className="flex   justify-center md:justify-normal flex-wrap gap-9 mt-10">
         <Js />
         <TypeScript />
         <React />

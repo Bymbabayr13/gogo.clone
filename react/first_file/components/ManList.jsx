@@ -6,7 +6,7 @@ export function ManList({ item }) {
     <>
       <img
         style={{ boxShadow: "1px 25px 16px 23px rgba(0,0,0,0.57)" }}
-        className="m-auto w-3/6 m-12 order-2 md:1/3"
+        className="m-auto w-3/6  order-2  "
         src={item.image}
       />
 
