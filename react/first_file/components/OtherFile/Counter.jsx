@@ -1,22 +1,11 @@
 export const { useState } = require("react");
 
 export function Counter() {
-  let [click, setClick] = useState(true);
-  function Nock() {
-    if ((click = true)) {
-      setClick(false);
-    } else {
-      setClick(true);
-    }
-  }
+  let arr = [];
   return (
     <div>
-      <button
-        className={`w-10 rounded-md ${click ? " bg-green-800" : "bg-red-800"}`}
-        onClick={Nock}
-      >
-        {click ? "on" : "off"}
-      </button>
+      <input className="border-red-800" placeholder="Input"></input>
+      <button className="bg-green-800">search</button>
     </div>
   );
 }

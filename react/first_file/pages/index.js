@@ -17,7 +17,7 @@ export default function Home() {
         <SectionTwo />
         <Footer />
       </div>
-      <div className=" flex items-end w-full h-14   justify-center dark: bg-black dark:text-slate-300 py-4">
+      <div className=" flex items-end w-full h-14 bg-slate-200 text-black  justify-center dark:bg-black dark:dark:text-slate-300 py-4">
         2023 | Designed and coded with ❤️️ by Sagar Shah
       </div>
     </>

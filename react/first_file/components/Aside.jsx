@@ -1,6 +1,6 @@
 import { Js } from "./icons/Js";
 import { TypeScript } from "./icons/TypeScript";
-import { React } from "./icons/react";
+import { React } from "./icons/React";
 import { Chip } from "./Chip";
 import { Nextjs } from "./icons/Nextjs";
 import { Node } from "./icons/Node";
