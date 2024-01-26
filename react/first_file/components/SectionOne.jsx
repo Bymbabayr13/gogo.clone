@@ -11,8 +11,6 @@ export function SectionOne() {
         Here is a quick summary of my most recent experiences:
       </p>
       <ContainerOne value={Experience} />
-      <ContainerOne value={Experience} />
-      <ContainerOne value={Experience} />
     </div>
   );
 }

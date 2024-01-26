@@ -1,11 +1,29 @@
 export const { useState } = require("react");
 
 export function Counter() {
-  let arr = [];
+  const [render, setRender] = useState();
+
+  const button = (event) => {
+    setRender(event.target.value);
+  };
   return (
-    <div>
-      <input className="border-red-800" placeholder="Input"></input>
-      <button className="bg-green-800">search</button>
+    <div className="">
+      <div>
+        <h1>todo list</h1>
+      </div>
+      <div>{render}</div>
+      <div className="flex">
+        <input
+          type="text"
+          id="render"
+          value={render}
+          className="border-red-800"
+          placeholder="text"
+        />
+        <button className="bg-green-800" onClick={button}>
+          add
+        </button>
+      </div>
     </div>
   );
 }
